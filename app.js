@@ -4,9 +4,15 @@ const app = express();
 app.use(express.urlencoded({ extended: true })); //to use form data
 app.use(express.json());  //to use json data
 
+const userRouter = require("./routes/user.route");
+app.use("/api/users", userRouter);  //user defined routing
+
 //cors cofigures for different port
 const cors = require('cors');
 app.use(cors());
+
+//DB configuration
+require("./config/db")
 
 //handling GET requests at a particular path. 
 app.get ("/", (req, res) =>{
