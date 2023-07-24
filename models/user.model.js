@@ -11,12 +11,12 @@ const userSchema = mongoose.Schema({
 
     name: {
         type: String,
-        require :   true
+        require :   [true, "User name is required"]
     },
 
     age: {
         type: Number,
-        require : true
+        require : [true, "age is required"]
     },
 
     createdOn: {
