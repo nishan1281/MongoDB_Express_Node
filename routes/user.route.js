@@ -2,9 +2,10 @@
 const express = require('express');
 const router = express.Router();
 
-const getallusers = require('../controllers/user.controller');
+const {getallusers, creatUser} = require('../controllers/user.controller');
 
 //here wer should only keep the routing to the variable, will be controled by controller
 router.get("/", getallusers);
+router.post("/", creatUser);
 
 module.exports = router;
